@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">The Film</string>
+
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="favorite">Favorite</string>
+
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="submit">Submit</string>
+    <string name="fillAllFields">Please fill in all fields.</string>
+    <string name="genres">Genres</string>
+    <string name="lastMovies">Popular Movies</string>
+    <string name="moreInfo">View More Information</string>
+    <string name="emptyList">No items found!</string>
+    <string name="searchHere">Search here…</string>
+    <string name="summary">Summary</string>
+    <string name="writers">Writers</string>
+    <string name="actors">Actors</string>
+    <string name="home_title">Home</string>
+    <string name="search_title">Search</string>
+    <string name="favorites_title">Favorites</string>
+    <string name="person_title">Person</string>
+
+    <string name="support_facebook">Instant support via Facebook Messenger</string>
+    <string name="support_zalo">Instant support via Zalo Messenger</string>
+</resources>
+
