@@ -2,12 +2,10 @@
 
 This project in
 - MVP architecture : Current Repo
-- MVVM architecture : https://github.com/hoangtien2k3/movie-app  [ Room Database - Dagger Hilt - RxJava -LiveData]
-- MVI architecture : Coming soon
+- MVVM architecture : https://github.com/hoangtien2k3/movie-app
+- The API’s Docs: https://developers.themoviedb.org/3/getting-started
+- The app was written in Kotlin.
 
-The app was written in Kotlin.
-
-The API’s Docs: https://developers.themoviedb.org/3/getting-started
 <br>
 <br>
 Technologies and Libraries Used :
