@@ -9,14 +9,12 @@ import retrofit2.http.Query
 
 interface ApiServices {
 
-
     //    https://api.themoviedb.org/3/movie/upcoming?api_key=***&page=1
     //    https://api.themoviedb.org/3/movie/popular?api_key=***
     //    https://api.themoviedb.org/3/genre/movie/list?api_key=***
     //    https://api.themoviedb.org/3/search/movie?api_key=***&query=MovieName&page=1
     //    https://api.themoviedb.org/3/movie/{movie_id}?api_key=***
     //    https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=***
-
 
     @GET("movie/upcoming")
     fun getUpcomingMoviesList(@Query("page") page: Int): Single<Response<UpcomingMoviesListResponse>>

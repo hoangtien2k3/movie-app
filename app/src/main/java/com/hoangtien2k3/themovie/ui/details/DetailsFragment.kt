@@ -57,12 +57,10 @@ class DetailsFragment : Fragment(), DetailsContracts.View {
                 detailsPresenter.callCreditsMovie(movieId)
             }
 
-
             backImg.setOnClickListener {
                 findNavController().navigateUp()
             }
         }
-
 
     }
 

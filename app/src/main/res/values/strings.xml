@@ -25,5 +25,6 @@
 
     <string name="support_facebook">Instant support via Facebook Messenger</string>
     <string name="support_zalo">Instant support via Zalo Messenger</string>
+    <string name="favorited">Favorited</string>
 </resources>
 

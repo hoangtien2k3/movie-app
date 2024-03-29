@@ -1,11 +1,12 @@
 package com.hoangtien2k3.themovie.ui.search
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.addTextChangedListener
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hoangtien2k3.themovie.adapter.CommonMoviesAdapter
@@ -28,30 +29,54 @@ class SearchFragment : Fragment(), SearchContracts.View {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
-    ): View? {
+    ): View {
         binding = FragmentSearchBinding.inflate(layoutInflater)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val searchViews = listOf(
+            binding.search1,
+            binding.search2,
+            binding.search3,
+            binding.search4,
+            binding.search5,
+            binding.search6
+        )
+        for (searchView in searchViews) {
+            searchView.setOnClickListener {
+                binding.apply {
+                    quickSearch.visibility = View.GONE
+                    val text: String = searchView.text.toString()
+                    if (text.isNotEmpty()) {
+                        searchEdt.setText(text)
+                    }
+                }
+            }
+        }
+
         binding.apply {
             searchEdt.addTextChangedListener {
                 val search = it.toString()
                 if (search.isNotEmpty()) {
-                    searchPresenter.callSearchMoviesList(1,search)
+                    quickSearch.visibility = View.GONE
+                    searchPresenter.callSearchMoviesList(1, search)
                 }
+            }
+            clearText.setOnClickListener {
+                searchEdt.setText("")
             }
         }
     }
 
     override fun loadSearchMoviesList(data: CommonMoviesListResponse) {
         binding.apply {
-
             commonMoviesAdapter.bind(data.results)
 
             moviesRecycler.apply {
-                layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+                layoutManager =
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
                 adapter = commonMoviesAdapter
             }
 
@@ -59,7 +84,6 @@ class SearchFragment : Fragment(), SearchContracts.View {
                 val direction = SearchFragmentDirections.actionToDetailFragment(it.id)
                 findNavController().navigate(direction)
             }
-
         }
     }
 
@@ -78,7 +102,7 @@ class SearchFragment : Fragment(), SearchContracts.View {
     }
 
     override fun responseError(error: String) {
-        TODO("Not yet implemented")
+        // TODO
     }
 
 }
