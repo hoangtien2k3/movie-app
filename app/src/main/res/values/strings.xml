@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">The Film</string>
+    <string name="app_name">The Moive</string>
 
     <string name="home">Home</string>
     <string name="search">Search</string>
@@ -26,5 +26,7 @@
     <string name="support_facebook">Contact via facebook messenger</string>
     <string name="support_zalo">Contact via zalo messenger</string>
     <string name="favorited">Favorited</string>
+    <string name="version_code">version: 1.0.0</string>
+    <string name="hoangtien2k3">hoangtien2k3</string>
 </resources>
 

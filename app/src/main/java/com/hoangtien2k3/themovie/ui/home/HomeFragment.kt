@@ -63,6 +63,7 @@ class HomeFragment : Fragment(), HomeContracts.View {
         homePresenter.callGenres()
         homePresenter.callPopularMoviesList(1)
 
+        floatingTab()
         binding.moviesScrollLay.setOnScrollChangeListener(
             NestedScrollView.OnScrollChangeListener { _, _, scrollY, _, oldScrollY ->
                 if (scrollY > oldScrollY) {
