@@ -10,9 +10,7 @@
         android:id="@+id/searchEdt"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
+        android:layout_margin="20dp"
         android:autofillHints=""
         android:background="@drawable/bg_rounded_dark"
         android:drawableStart="@drawable/ic_round_search_24"
@@ -45,18 +43,20 @@
         android:id="@+id/moviesScrollLay"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="70dp">
+        android:layout_marginTop="65dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="40dp">
 
             <LinearLayout
                 android:id="@+id/quickSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -267,7 +267,7 @@
                     android:layout_marginTop="10dp"
                     android:drawablePadding="10dp"
                     android:fontFamily="sans-serif-light"
-                    android:text="Top Gun: Maverick"
+                    android:text="The Incredible Hulk"
                     android:textColor="@color/philippineSilver"
                     android:textSize="15sp"
                     app:drawableStartCompat="@drawable/ic_round_access_time_24"
@@ -277,334 +277,7 @@
                     app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/search13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Ip Man II – Legend of the Warrior"
-                    android:textColor="@color/philippineSilver"
-                    android:textSize="15sp"
-                    app:drawableStartCompat="@drawable/ic_round_access_time_24"
-                    app:drawableTint="@color/philippineSilver"
-                    app:layout_constraintEnd_toStartOf="@+id/movieDateTxt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
-                    app:layout_constraintTop_toTopOf="parent" />
             </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/see_more"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-                    app:layout_constraintHorizontal_bias="0.907"
-                    app:layout_constraintStart_toStartOf="@+id/linearLayout"
-                    tools:layout_editor_absoluteY="482dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="20dp"
-                android:orientation="vertical"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:text="@string/japanese_cartoons"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.058"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-                <TextView
-                    android:id="@+id/search14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="From Up On Poppy Hill"
-                    android:textColor="@color/philippineSilver"
-                    android:textSize="15sp"
-                    app:drawableStartCompat="@drawable/ic_round_star_24"
-                    app:drawableTint="@color/philippineSilver"
-                    app:layout_constraintEnd_toStartOf="@+id/movieDateTxt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/search15"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Tonari no Totoro - My Neighbor Totoro"
-                    android:textColor="@color/philippineSilver"
-                    android:textSize="15sp"
-                    app:drawableStartCompat="@drawable/ic_round_star_24"
-                    app:drawableTint="@color/philippineSilver"
-                    app:layout_constraintEnd_toStartOf="@+id/movieDateTxt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/search16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Into the Forest of Fireflies’ Light"
-                    android:textColor="@color/philippineSilver"
-                    android:textSize="15sp"
-                    app:drawableStartCompat="@drawable/ic_round_star_24"
-                    app:drawableTint="@color/philippineSilver"
-                    app:layout_constraintEnd_toStartOf="@+id/movieDateTxt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/search17"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="A Letter to Momo"
-                    android:textColor="@color/philippineSilver"
-                    android:textSize="15sp"
-                    app:drawableStartCompat="@drawable/ic_round_star_24"
-                    app:drawableTint="@color/philippineSilver"
-                    app:layout_constraintEnd_toStartOf="@+id/movieDateTxt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <TextView
-                    android:id="@+id/search18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="The Tale of The Princess Kaguya"
-                    android:textColor="@color/philippineSilver"
-                    android:textSize="15sp"
-                    app:drawableStartCompat="@drawable/ic_round_star_24"
-                    app:drawableTint="@color/philippineSilver"
-                    app:layout_constraintEnd_toStartOf="@+id/movieDateTxt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/search19"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="The Anthem of the Heart"
-                    android:textColor="@color/philippineSilver"
-                    android:textSize="15sp"
-                    app:drawableStartCompat="@drawable/ic_round_star_24"
-                    app:drawableTint="@color/philippineSilver"
-                    app:layout_constraintEnd_toStartOf="@+id/movieDateTxt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <TextView
-                    android:id="@+id/search20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:drawablePadding="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:text="Howl’s Moving Castle"
-                    android:textColor="@color/philippineSilver"
-                    android:textSize="15sp"
-                    app:drawableStartCompat="@drawable/ic_round_star_24"
-                    app:drawableTint="@color/philippineSilver"
-                    app:layout_constraintEnd_toStartOf="@+id/movieDateTxt"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/movieRateTxt"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/bankTransfer"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="50dp"
-                    android:background="@drawable/bg_rounded_dark"
-                    app:cardCornerRadius="10dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_rounded_dark"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="20dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp"
-                            android:letterSpacing="0.01"
-                            android:lineSpacingExtra="1sp"
-                            android:text="Social networking"
-                            android:textColor="@color/white"
-                            android:textSize="14.3sp"
-                            android:textStyle="bold" />
-
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="0.5dp"
-                            android:layout_marginBottom="10dp"
-                            android:background="#afaeae" />
-
-                        <RelativeLayout
-                            android:id="@+id/relBank"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:paddingBottom="10dp">
-
-                            <LinearLayout
-                                android:id="@+id/lnIconBank1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <ImageView
-                                    android:id="@+id/menuFacebook"
-                                    android:layout_width="50dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginStart="20dp"
-                                    app:srcCompat="@drawable/facebook" />
-
-                                <ImageView
-                                    android:id="@+id/menuMessage"
-                                    android:layout_width="50dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginStart="10dp"
-                                    app:srcCompat="@drawable/messenger" />
-
-                                <ImageView
-                                    android:id="@+id/menuZalo"
-                                    android:layout_width="50dp"
-                                    android:layout_height="30dp"
-                                    android:layout_marginStart="10dp"
-                                    app:srcCompat="@drawable/zalo" />
-
-                                <ImageView
-                                    android:id="@+id/menuGithub"
-                                    android:layout_width="50dp"
-                                    android:layout_height="40dp"
-                                    android:layout_marginStart="10dp"
-                                    app:srcCompat="@drawable/github" />
-                            </LinearLayout>
-
-                            <HorizontalScrollView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentStart="true"
-                                android:layout_toStartOf="@+id/ic_right"
-                                android:paddingStart="20dp"
-                                android:scrollbars="none"
-                                android:visibility="gone">
-
-                                <LinearLayout
-                                    android:id="@+id/lnIconBank"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="horizontal" />
-                            </HorizontalScrollView>
-
-                            <ImageView
-                                android:id="@+id/ic_right"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="10dp"
-                                app:srcCompat="@drawable/ic_round_chevron_right_24" />
-                        </RelativeLayout>
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp">
-
-                            <TextView
-                                android:id="@+id/text_extra_fee_bank_app"
-                                android:textColor="@color/white"
-                                android:textStyle="italic"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:layout_marginStart="20dp"
-                                android:letterSpacing="-0.02"
-                                android:lineSpacingExtra="2.7sp"
-                                android:text="contact now"
-                                android:textSize="14.7sp" />
-
-                            <TextView
-                                android:id="@+id/value_extra_fee_bank_app"
-                                android:textColor="@color/yellow"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentEnd="true"
-                                android:layout_centerVertical="true"
-                                android:layout_marginEnd="20dp"
-                                android:letterSpacing="-0.02"
-                                android:lineSpacingExtra="2.7sp"
-                                android:text="Connect"
-                                android:textSize="14.7sp"
-                                android:textStyle="italic" />
-                        </RelativeLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-            </LinearLayout>
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
@@ -657,6 +330,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/RoundedShapeAppearance"
         app:srcCompat="@drawable/ic_arrow_upward_white_24dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

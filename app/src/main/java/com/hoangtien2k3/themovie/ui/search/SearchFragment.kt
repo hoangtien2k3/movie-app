@@ -50,15 +50,7 @@ class SearchFragment : Fragment(), SearchContracts.View {
             binding.search9,
             binding.search10,
             binding.search11,
-            binding.search12,
-            binding.search13,
-            binding.search14,
-            binding.search15,
-            binding.search16,
-            binding.search17,
-            binding.search18,
-            binding.search19,
-            binding.search20
+            binding.search12
         )
         for (searchView in searchViews) {
             searchView.setOnClickListener {
@@ -84,13 +76,6 @@ class SearchFragment : Fragment(), SearchContracts.View {
             clearText.setOnClickListener {
                 searchEdt.setText("")
             }
-        }
-
-        binding.apply {
-            menuFacebook.setOnClickListener { socialNetwork("facebook") }
-            menuMessage.setOnClickListener { socialNetwork("message") }
-            menuZalo.setOnClickListener { socialNetwork("zalo") }
-            menuGithub.setOnClickListener { socialNetwork("github") }
         }
 
 
@@ -127,21 +112,6 @@ class SearchFragment : Fragment(), SearchContracts.View {
                 val direction = SearchFragmentDirections.actionToDetailFragment(it.id)
                 findNavController().navigate(direction)
             }
-        }
-    }
-
-    private fun socialNetwork(title: String) {
-        val socialNetworkMap = mapOf(
-            "zalo" to Pair("0828007853", "http://zalo.me/"),
-            "message" to Pair("100053705482952", "http://m.me/"),
-            "facebook" to Pair("100077499696008", "http://m.me/"),
-            "github" to Pair("hoangtien2k3", "https://github.com/")
-        )
-
-        socialNetworkMap[title]?.let { (id, baseUrl) ->
-            val url = "$baseUrl$id"
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-            startActivity(intent)
         }
     }
 
