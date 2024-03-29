@@ -8,8 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.widget.NestedScrollView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.hoangtien2k3.themovie.R
 import com.hoangtien2k3.themovie.adapter.FavoriteMoviesAdapter
 import com.hoangtien2k3.themovie.databinding.FragmentFavoritesBinding
@@ -41,7 +43,23 @@ class FavoritesFragment : Fragment(), FavoritesContracts.View {
         super.onViewCreated(view, savedInstanceState)
 
         favoritesPresenter.callFavoritesList()
-        floatingTab()
+
+        binding.fab.visibility = View.GONE
+        binding.favoriteRecycler.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+                if (firstVisibleItemPosition == 0) {
+                    binding.fab.visibility = View.GONE
+                } else {
+                    binding.fab.visibility = View.VISIBLE
+                    binding.fab.setOnClickListener {
+                        binding.favoriteRecycler.smoothScrollToPosition(0)
+                    }
+                }
+            }
+        })
     }
 
     override fun loadFavoriteMovieList(data: MutableList<MoviesEntity>) {
@@ -57,7 +75,6 @@ class FavoritesFragment : Fragment(), FavoritesContracts.View {
             val direction = HomeFragmentDirections.actionToDetailFragment(it.id)
             findNavController().navigate(direction)
         }
-
     }
 
     override fun showEmpty() {
@@ -86,62 +103,9 @@ class FavoritesFragment : Fragment(), FavoritesContracts.View {
 
     }
 
-
     override fun onDestroy() {
         super.onDestroy()
         favoritesPresenter.onStop()
-    }
-
-
-    var isFABOpen = false
-    private fun floatingTab() {
-        binding.fab.setOnClickListener {
-            if (!isFABOpen) {
-                showFABMenu()
-            } else {
-                closeFABMenu()
-            }
-        }
-        binding.menuZalo.setOnClickListener {
-            closeFABMenu()
-            val zaloID = "0828007853"
-            val url = "http://zalo.me/$zaloID"
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-            startActivity(browserIntent)
-        }
-        binding.menuFacebook.setOnClickListener {
-            closeFABMenu()
-            val facebookID = "100053705482952"
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("http://m.me/$facebookID"))
-            startActivity(intent)
-        }
-        binding.overlay.setOnClickListener {
-            closeFABMenu()
-        }
-    }
-
-    private fun showFABMenu() {
-        isFABOpen = true
-        binding.fab.hide()
-        binding.fab.setImageResource(R.drawable.ic_floating_btn_close)
-        binding.fab.show()
-        binding.menuZalo.animate().translationY(-resources.getDimension(R.dimen.marginBottom_zalo))
-        binding.menuFacebook.animate().translationY(-resources.getDimension(R.dimen.marginBottom_facebook))
-        binding.menuZalo.visibility = View.VISIBLE
-        binding.menuFacebook.visibility = View.VISIBLE
-        binding.overlay.visibility = View.VISIBLE
-    }
-
-    private fun closeFABMenu() {
-        isFABOpen = false
-        binding.menuZalo.animate().translationY(0F)
-        binding.menuFacebook.animate().translationY(0F)
-        binding.menuZalo.visibility = View.GONE
-        binding.menuFacebook.visibility = View.GONE
-        binding.overlay.visibility = View.GONE
-        binding.fab.hide()
-        binding.fab.setImageResource(R.drawable.ic_support_chat)
-        binding.fab.show()
     }
 
 }

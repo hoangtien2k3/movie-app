@@ -23,8 +23,8 @@
     <string name="favorites_title">Favorites</string>
     <string name="person_title">Person</string>
 
-    <string name="support_facebook">Instant support via Facebook Messenger</string>
-    <string name="support_zalo">Instant support via Zalo Messenger</string>
+    <string name="support_facebook">Contact via facebook messenger</string>
+    <string name="support_zalo">Contact via zalo messenger</string>
     <string name="favorited">Favorited</string>
 </resources>
 

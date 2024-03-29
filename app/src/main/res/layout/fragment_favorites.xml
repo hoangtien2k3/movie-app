@@ -1,158 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.favorites.FavoritesFragment">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/detailScrollView"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/favoriteRecycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:clipToPadding="false"
+        android:paddingTop="10dp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:id="@+id/movieSummaryTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:drawablePadding="5dp"
-                android:fontFamily="sans-serif-light"
-                android:text="@string/favorited"
-                android:textColor="@color/philippineSilver"
-                android:textSize="15sp"
-                app:drawableStartCompat="@drawable/ic_round_favorite_24"
-                app:drawableTint="@color/philippineSilver"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.732"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/favoriteRecycler"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:clipToPadding="false"
-                android:layout_marginTop="30dp"
-                android:paddingTop="10dp" />
-
-            <ProgressBar
-                android:id="@+id/favLoading"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/emptyItemsLay"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:visibility="gone">
-
-                <include layout="@layout/empty_items" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/menuZalo"
-        android:layout_width="312dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/menuFacebook"
-        android:layout_alignLeft="@+id/menuFacebook"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
+    <ProgressBar
+        android:id="@+id/favLoading"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:visibility="gone"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fab"
-        app:layout_constraintEnd_toEndOf="@+id/menuFacebook"
-        tools:visibility="visible">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:gravity="center_vertical|end"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingTop="15dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="15dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/emptyItemsLay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
-            <TextView
-                style="@style/TextBlue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|end"
-                android:layout_marginRight="10dp"
-                android:gravity="right|end"
-                android:text="@string/support_zalo"
-                android:textAllCaps="false" />
+        <include layout="@layout/empty_items" />
 
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:srcCompat="@drawable/zalo" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/menuFacebook"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:visibility="gone"
-        app:cardCornerRadius="30dp"
-        app:cardElevation="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/fab"
-        app:layout_constraintEnd_toEndOf="@+id/fab"
-        tools:visibility="visible">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingLeft="20dp"
-            android:paddingTop="15dp"
-            android:paddingRight="15dp"
-            android:paddingBottom="15dp">
-
-            <TextView
-                style="@style/TextBlue"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right|end"
-                android:layout_marginRight="10dp"
-                android:gravity="right|end"
-                android:text="@string/support_facebook"
-                android:textAllCaps="false" />
-
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                app:srcCompat="@drawable/messenger" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -160,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginTop="600dp"
+        android:layout_marginTop="620dp"
         android:layout_marginEnd="20dp"
         android:backgroundTint="@color/main_tabs"
         app:backgroundTint="@color/color_tin"
@@ -170,13 +49,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/RoundedShapeAppearance"
-        app:srcCompat="@drawable/ic_support_chat" />
-
-    <View
-        android:id="@+id/overlay"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent"
-        android:visibility="gone" />
+        app:srcCompat="@drawable/ic_arrow_upward_white_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
