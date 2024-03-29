@@ -28,5 +28,15 @@
     <string name="favorited">Favorited</string>
     <string name="version_code">version: 1.0.0</string>
     <string name="hoangtien2k3">hoangtien2k3</string>
+    <string name="action_movie">Action movie</string>
+    <string name="spirited_away">Spirited Away</string>
+    <string name="coco">Coco</string>
+    <string name="carl_date">Carl\'s Date</string>
+    <string name="the_boy_and_the_heron">The boy and the Heron</string>
+    <string name="the_adventures">The adventures</string>
+    <string name="lion_king">Lion King</string>
+    <string name="quick_search">Quick search</string>
+    <string name="japanese_cartoons">Japanese cartoons</string>
+    <string name="see_more">See more</string>
 </resources>
 
